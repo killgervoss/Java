@@ -1,0 +1,6 @@
+package oppsConcept;
+
+public class Main {
+    Vehicle vehicle = new Car("BWM", "1000", 35000)
+    System.out.println(vehicle.getBrand());
+}

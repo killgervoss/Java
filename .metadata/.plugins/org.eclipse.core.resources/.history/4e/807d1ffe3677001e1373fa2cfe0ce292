@@ -1,0 +1,35 @@
+package service;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class InstructorService {
+
+    public List<Instructors> readCSV () throws IOException {
+        String line = null;
+        String splitby = ",";
+        int count = 0;
+        BufferedReader br = new BufferedReader(new FileReader(""));
+        List<Instructor> InstructorList = new ArrayList<>();
+
+        while((line = br.readLine()) != null){
+            if(count != 0) {
+                Instructors instructor = new Instructor();
+                String[] instructors = line.split(splitby);
+
+                instructor.setInstructID(instructors[0].trim());
+                instructor.setName(instructors[1].trim());
+                instructor.setSubjectId(instructors[2].trim());
+                instructor.setPhoneNumber(instructors[3].trim());
+                instructor.setEmail(instructors[4].trim());
+                instructor.setTarget_year(instructors[5].trim());
+
+                instructorList.add(instructor);
+            }
+            count++;
+        }
+    }
+}
